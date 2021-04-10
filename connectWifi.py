@@ -5,6 +5,7 @@ Connect to the ssid and pwd
 
 import time
 
+import network
 from micropython import const
 
 _STAT_GOT_IP = const(5)
@@ -18,7 +19,6 @@ def do_connect(ssid, pwd) -> bool:
     :param pwd: password
     :return: True if connected successfully.
     """
-    import network
 
     print('Turn off AP for security.')
     sta_ap = network.WLAN(network.AP_IF)
